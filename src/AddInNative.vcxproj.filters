@@ -85,9 +85,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="AddInNative.def">
-      <Filter>Source Files</Filter>
-    </None>
     <None Include="Makefile" />
   </ItemGroup>
   <ItemGroup>

@@ -230,10 +230,12 @@ enum AppCapabilities
 /**
  * These functions should be implemented that component can be loaded and created. 
  */
-extern "C" long GetClassObject(const WCHAR_T*, IComponentBase** pIntf);
-extern "C" long DestroyObject(IComponentBase** pIntf);
-extern "C" const WCHAR_T* GetClassNames();
-extern "C" AppCapabilities SetPlatformCapabilities(const AppCapabilities capabilities);
+extern "C" {
+    __declspec(dllexport) long GetClassObject(const WCHAR_T*, IComponentBase** pIntf);
+    __declspec(dllexport) long DestroyObject(IComponentBase** pIntf);
+    __declspec(dllexport) const WCHAR_T* GetClassNames();
+    __declspec(dllexport) AppCapabilities SetPlatformCapabilities(const AppCapabilities capabilities);
+}
 
 typedef long (*GetClassObjectPtr)(const WCHAR_T* wsName, IComponentBase** pIntf);
 typedef long (*DestroyObjectPtr)(IComponentBase** pIntf);
