@@ -226,15 +226,21 @@ enum AppCapabilities
     eAppCapabilitiesLast = eAppCapabilities1,
 };
 
+#ifdef _WINDOWS
+#   define ADDIN_EXPORT __declspec(dllexport)
+#else
+#   define ADDIN_EXPORT __attribute__((visibility("default")))
+#endif
+
 /// Announcements of exported functions
 /**
  * These functions should be implemented that component can be loaded and created. 
  */
 extern "C" {
-    __declspec(dllexport) long GetClassObject(const WCHAR_T*, IComponentBase** pIntf);
-    __declspec(dllexport) long DestroyObject(IComponentBase** pIntf);
-    __declspec(dllexport) const WCHAR_T* GetClassNames();
-    __declspec(dllexport) AppCapabilities SetPlatformCapabilities(const AppCapabilities capabilities);
+    ADDIN_EXPORT long GetClassObject(const WCHAR_T*, IComponentBase** pIntf);
+    ADDIN_EXPORT long DestroyObject(IComponentBase** pIntf);
+    ADDIN_EXPORT const WCHAR_T* GetClassNames();
+    ADDIN_EXPORT AppCapabilities SetPlatformCapabilities(const AppCapabilities capabilities);
 }
 
 typedef long (*GetClassObjectPtr)(const WCHAR_T* wsName, IComponentBase** pIntf);
