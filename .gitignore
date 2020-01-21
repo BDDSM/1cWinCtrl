@@ -6,6 +6,8 @@
 /build32w
 /build64L
 /build32L
+/build64
+/build32
 /build
 /bind64
 /bind32
