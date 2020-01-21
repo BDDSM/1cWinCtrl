@@ -285,6 +285,11 @@ std::wstring ClipboardManager::GetFiles()
 	return {};
 }
 
+std::wstring ClipboardManager::GetFormat()
+{
+	return {};
+}
+
 bool ClipboardManager::SetFiles(tVariant* paParams, bool bEmpty = true)
 {
 	return false;

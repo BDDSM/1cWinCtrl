@@ -8,6 +8,7 @@
         "*/resource.*": true,
         "*.bat": true,
         "*.sln": true,
+        "*.zip": true,
         "*/*.def": true,
         "*/*.d": true,
         "*/*.o": true,

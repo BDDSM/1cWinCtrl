@@ -62,5 +62,5 @@ set_target_properties( ${PROJECT_NAME} PROPERTIES
    )
 
 if (WINDOWS)
-    target_link_libraries(${PROJECT_NAME} gdiplus)
+    target_link_libraries(${PROJECT_NAME} dwmapi gdiplus wbemuuid)
 endif()

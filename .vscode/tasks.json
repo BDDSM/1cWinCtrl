@@ -7,7 +7,7 @@
             "label": "Build 1cWinCtrl64",
             "type": "shell",
             "command": "${workspaceRoot}/build.sh",
-            "args": [ "64" ],
+            "args": [ "64L" ],
             "group": {
                 "kind": "build",
                 "isDefault": true
